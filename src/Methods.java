@@ -39,7 +39,7 @@ public class Methods {
 
     }
 
-    public static void deliver(int deliveryDistance) {
+    public static int deliver(int deliveryDistance) {
         int delivery = 1;
         if (deliveryDistance <= 20) {
             System.out.println("Потребуется дней: " + delivery);
@@ -51,10 +51,11 @@ public class Methods {
         } else {
             System.out.println("Доставки нет.");
         }
+        return delivery;
     }
 
     public static void task3() {
-        int deliveryDistance = 90;
+        int deliveryDistance = 110;
         deliver(deliveryDistance);
 
     }
@@ -63,7 +64,6 @@ public class Methods {
         task1();
         task2();
         task3();
-
     }
 }
 
