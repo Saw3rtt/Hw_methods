@@ -1,6 +1,12 @@
 import java.time.LocalDate;
 
 public class Methods {
+    public static void main(String[] args) {
+        task1();
+        task2();
+        task3();
+    }
+
     public static void checkLeapYear(int year) {
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
             System.out.println(year + " год является високосным");
@@ -40,31 +46,28 @@ public class Methods {
     }
 
     public static int deliver(int deliveryDistance) {
-        int delivery = 1;
+        int deliveryDays = -1;
         if (deliveryDistance <= 20) {
-            System.out.println("Потребуется дней: " + delivery);
+            deliveryDays = 1;
         } else if (deliveryDistance <= 60) {
-            System.out.println("Потребуется дней: " + (delivery + 1));
+            deliveryDays = 2;
         } else if (deliveryDistance < 100) {
-            System.out.println("Потребуется дней: " + (delivery + 2));
-
-        } else {
-            System.out.println("Доставки нет.");
+            deliveryDays = 3;
         }
-        return delivery;
+        return deliveryDays;
     }
 
     public static void task3() {
-        int deliveryDistance = 110;
-        deliver(deliveryDistance);
-
+        int deliveryDistance = 90;
+        int deliveryDays = deliver(deliveryDistance);
+        if (deliveryDays == -1) {
+            System.out.println("Доставки нет.");
+        } else {
+            System.out.println("Доставка займет: " + deliveryDays + " дней");
+        }
     }
 
-    public static void main(String[] args) {
-        task1();
-        task2();
-        task3();
-    }
+
 }
 
 
